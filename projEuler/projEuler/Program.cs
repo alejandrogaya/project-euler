@@ -7,10 +7,10 @@ namespace projEuler
     {
         static void Main(string[] args)
         {
-            ex7();
+            Ex8();
         }
 
-        public static void ex1()
+        public static void Ex1()
         {
             int i = 0;
             int sum = 0;
@@ -29,7 +29,7 @@ namespace projEuler
             Console.ReadLine();
         }
 
-        public static void ex2()
+        public static void Ex2()
         {
             Int64 sum = 2;
             List<int> fibbonacciSequence = new List<int>();
@@ -59,7 +59,7 @@ namespace projEuler
             Console.ReadLine();
         }
 
-        public static void ex3()
+        public static void Ex3()
         {
             Int64 number = 600851475143;
             Int64 limit = (Int64)(Math.Sqrt(number));
@@ -92,7 +92,7 @@ namespace projEuler
         }
 
 
-        public static void ex5()
+        public static void Ex5()
         {
             int num = 1;
             bool found = false;
@@ -116,7 +116,7 @@ namespace projEuler
             return true;
         }
 
-        public static void ex6()
+        public static void Ex6()
         {
             int[] solution = new int[2];
             solution = getSumOfSquaresAndSquareOfSum(100);
@@ -141,7 +141,7 @@ namespace projEuler
 
         }
 
-        public static void ex7()
+        public static void Ex7()
         {
             List<int> primes = new List<int>();
             primes.Add(2);
@@ -172,9 +172,57 @@ namespace projEuler
             Console.ReadLine();
         }
 
+        public static void Ex8()
+        {
+            String number = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
+            List<ulong> prod = new List<ulong>();
+            int count;
+            ulong multiply;
+
+            for(int i = 0; i < number.Length; i++)
+            {
+
+                count = i;
+                multiply = 1;
+
+                if ((count + 30) < number.Length) { 
+                    while(count <= i + 13)
+                    {
+                        multiply *= (ulong)Convert.ToInt64(number[count]);
+                        count++;
+                    }
+                    prod.Add(multiply);
+                    //Console.WriteLine(multiply);
+                    //Console.ReadLine();
+                }
+
+                
+            }
+            //prod.Sort();
+            ulong max = 0;
+            foreach (ulong a in prod)
+            {
+                if (a > max)
+                {
+                    max = a;
+                }
+                
+             
+                
+            }
+            Console.WriteLine(max);
+            Console.ReadLine();
+            Console.WriteLine(prod[prod.Count - 1]);
+
+            /*foreach (Int64 p in prod)
+            {
+                Console.WriteLine(p);
+            }*/
+            Console.ReadLine();
+        }
 
         // HARD STUCK
-        public static void ex4()
+        public static void Ex4()
         {
             //int number1 = 999;
             //int number2 = number1;
