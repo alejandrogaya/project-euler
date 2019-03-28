@@ -7,7 +7,7 @@ namespace projEuler
     {
         static void Main(string[] args)
         {
-            ex6();
+            ex7();
         }
 
         public static void ex1()
@@ -139,6 +139,37 @@ namespace projEuler
 
             return sum;
 
+        }
+
+        public static void ex7()
+        {
+            List<int> primes = new List<int>();
+            primes.Add(2);
+            primes.Add(3);
+            primes.Add(5);
+            primes.Add(7);
+            primes.Add(11);
+            primes.Add(13);
+            Int64 i = 14;
+            bool found = false;
+
+            while (!found)
+            {
+                if (isPrime(i))
+                {
+                    primes.Add((int)i);
+                }
+
+                i++;
+
+                if (primes.Count == 10001)
+                {
+                    found = true;
+                }
+            }
+
+            Console.WriteLine("Solution: " + primes[primes.Count - 1]);
+            Console.ReadLine();
         }
 
 
